@@ -1,0 +1,38 @@
+@startuml
+
+start
+
+:User membuka aplikasi;
+:User melakukan login atau registrasi;
+
+if (Login berhasil?) then (Ya)
+  :User masuk ke dashboard;
+else (Tidak)
+  :Tampilkan pesan error;
+  stop
+endif
+
+:User memilih fitur;
+
+switch (Fitur yang dipilih)
+  case (Canvas Digital)
+    :User mulai menggambar;
+    :User menyimpan atau membagikan hasil;
+  case (AI Auto-Sketching)
+    :User mengunggah sketsa;
+    :AI mengolah gambar;
+    :User menyimpan hasil;
+  case (AI Auto-Coloring)
+    :User mengunggah gambar hitam putih;
+    :AI mewarnai gambar;
+    :User menyimpan hasil;
+  case (Marketplace)
+    :User mengunggah karya ke marketplace;
+    :User melakukan transaksi;
+  case (Galeri)
+    :User menjelajahi karya orang lain;
+endswitch
+
+stop
+
+@enduml
